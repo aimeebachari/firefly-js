@@ -70,7 +70,18 @@ let whoSaidThis = (quote) => {
 };
 
 let longestQuote = (name) => {
-
+  let b = crewMembers.indexOf(name);
+  let longQuote = "";
+  for (let i = 0; i < quotes.length; i++) {
+    if (b === i) {
+      quotes[i].forEach((quote) => {
+        if (longQuote.length < quote.length) {
+          longQuote = quote;
+        }
+      });
+    }
+  }
+  return longQuote;
 };
 
 let averageQuoteLength = (name) => {
