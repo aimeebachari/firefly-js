@@ -58,7 +58,15 @@ let numberOfQuotes = (name) => {
 };
 
 let whoSaidThis = (quote) => {
-
+  let index = 0;
+  for (let i = 0; i < quotes.length; i++) {
+    quotes[i].forEach((saying) => {
+      if (saying === quote) {
+        index = i;
+      }
+    });
+  }
+  return crewMembers[index];
 };
 
 let longestQuote = (name) => {
