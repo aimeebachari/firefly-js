@@ -85,7 +85,18 @@ let longestQuote = (name) => {
 };
 
 let averageQuoteLength = (name) => {
-
+  let b = crewMembers.indexOf(name);
+  let total = 0;
+  let numberOfQuotes = 0;
+  for (let i = 0; i < quotes.length; i++) {
+    numberOfQuotes = quotes[i].length;
+    if (b === i) {
+      quotes[i].forEach((quote) => {
+        total = total + quote.length;
+      });
+    }
+  }
+  return Math.round(total / numberOfQuotes);
 };
 
 // 1. How many quotes does Mal have? Write a function called `numberOfQuotes` that takes one argument, the name of a character. This function should return the number of quotes that character has. If your function is set up properly you should be able to call `numberOfQuotes("Mal")` and `numberOfQuotes("Zoe")`, and get the Expected Output below:
